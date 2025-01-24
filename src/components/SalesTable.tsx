@@ -10,7 +10,7 @@ interface SalesTableProps {
 const SortArrow: React.FC<{ direction: 'asc' | 'desc' }> = ({ direction }) => {
   return (
     <img
-      src="/arrow.svg"
+      src="`${process.env.PUBLIC_URL}/arrow.svg`"
       alt="Sort Arrow"
       style={{
         marginLeft: '0.3rem',
