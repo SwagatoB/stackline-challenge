@@ -1,6 +1,7 @@
 {
   "name": "stackline-challenge",
   "version": "0.1.0",
+  "homepage": "https://swagatob.github.io/stackline-challenge/",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^2.5.0",
