@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/stackline-challenge/static/css/main.d3f31678.css",
-    "main.js": "/stackline-challenge/static/js/main.a3b5f555.js",
+    "main.js": "/stackline-challenge/static/js/main.c4736bbd.js",
     "static/js/345.aac403ab.chunk.js": "/stackline-challenge/static/js/345.aac403ab.chunk.js",
     "index.html": "/stackline-challenge/index.html",
     "main.d3f31678.css.map": "/stackline-challenge/static/css/main.d3f31678.css.map",
-    "main.a3b5f555.js.map": "/stackline-challenge/static/js/main.a3b5f555.js.map"
+    "main.c4736bbd.js.map": "/stackline-challenge/static/js/main.c4736bbd.js.map"
   },
   "entrypoints": [
     "static/css/main.d3f31678.css",
-    "static/js/main.a3b5f555.js"
+    "static/js/main.c4736bbd.js"
   ]
 }
