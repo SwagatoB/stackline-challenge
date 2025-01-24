@@ -12,7 +12,7 @@ import {
 import { parseISO } from 'date-fns'
 import { Sale } from '../features/productSlice'
 
-// 1) Short format helper
+
 function shortCurrencyFormatter(value: number): string {
   if (value >= 1_000_000) {
     return `$${(value / 1_000_000).toFixed(1)}M`
@@ -28,7 +28,7 @@ interface SalesChartProps {
 }
 
 const SalesChart: React.FC<SalesChartProps> = ({ sales }) => {
-  // Example aggregator: weekly => monthly
+  // weekly => monthly
   const monthlyData = React.useMemo(() => {
     const monthMap: Record<string, { retailSales: number; wholesaleSales: number; timeValue: number }> = {}
     sales.forEach((sale) => {
@@ -63,28 +63,19 @@ const SalesChart: React.FC<SalesChartProps> = ({ sales }) => {
     <ResponsiveContainer width="100%" height={300}>
       <LineChart data={monthlyData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
         <CartesianGrid strokeDasharray="3 3" />
-
-        {/* X-axis by month label */}
         <XAxis dataKey="month" />
-
-        {/* 2) Y-axis with short formatting (K/M) */}
-        <YAxis tickFormatter={shortCurrencyFormatter} />
-
-        {/* 3) Tooltip with short currency format */}
+        <YAxis tickFormatter={shortCurrencyFormatter} />        
         <Tooltip
           formatter={(value: any, name: string) => {
-            // If it's a number, short format it
+            
             if (typeof value === 'number') {
               return shortCurrencyFormatter(value)
             }
             return value
           }}
         />
-
-        {/* 4) Legend with custom line names */}
+        
         <Legend />
-
-        {/* 5) Lines with custom name for the legend */}
         <Line
           type="monotone"
           dataKey="retailSales"

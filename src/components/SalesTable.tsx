@@ -6,7 +6,6 @@ interface SalesTableProps {
   sales: Sale[]
 }
 
-// Arrow component that flips if direction='desc'
 const SortArrow: React.FC<{ direction: 'asc' | 'desc' }> = ({ direction }) => {
   return (
     <img
@@ -25,11 +24,10 @@ const SortArrow: React.FC<{ direction: 'asc' | 'desc' }> = ({ direction }) => {
 }
 
 const SalesTable: React.FC<SalesTableProps> = ({ sales }) => {
-  // 1) By default, let's sort the 'weekEnding' column ascending
+
   const [sortColumn, setSortColumn] = React.useState<keyof Sale>('weekEnding')
   const [sortDirection, setSortDirection] = React.useState<'asc' | 'desc'>('asc')
 
-  // 2) Sort the data whenever sales, sortColumn, or sortDirection change
   const sortedSales = React.useMemo(() => {
     if (!sales) return []
     const copy = [...sales]
@@ -38,12 +36,12 @@ const SalesTable: React.FC<SalesTableProps> = ({ sales }) => {
       const valB = b[sortColumn]
 
       if (typeof valA === 'string' && typeof valB === 'string') {
-        // Compare strings
+        
         return sortDirection === 'asc'
           ? valA.localeCompare(valB)
           : valB.localeCompare(valA)
       } else {
-        // Compare numbers
+        
         const numA = Number(valA)
         const numB = Number(valB)
         return sortDirection === 'asc' ? numA - numB : numB - numA
@@ -52,9 +50,6 @@ const SalesTable: React.FC<SalesTableProps> = ({ sales }) => {
     return copy
   }, [sales, sortColumn, sortDirection])
 
-  // 3) On header click: 
-  // if it's already the sorted column, toggle asc/desc
-  // otherwise, set to that column & default asc
   const handleSort = (column: keyof Sale) => {
     if (column === sortColumn) {
       setSortDirection(prev => (prev === 'asc' ? 'desc' : 'asc'))
@@ -64,9 +59,6 @@ const SalesTable: React.FC<SalesTableProps> = ({ sales }) => {
     }
   }
 
-  // 4) We ALWAYS render an arrow for each column. 
-  // If it's the active column, use sortDirection. 
-  // Otherwise, default to 'asc'.
   const getArrowDirection = (column: keyof Sale): 'asc' | 'desc' => {
     return column === sortColumn ? sortDirection : 'asc'
   }

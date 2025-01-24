@@ -1,4 +1,4 @@
-// src/pages/ProductPage.tsx
+
 import React, { useEffect } from 'react'
 import { useAppDispatch, useAppSelector } from '../hooks.ts'
 import { fetchProducts, selectProducts } from '../features/productSlice.ts'
@@ -24,12 +24,8 @@ const ProductPage: React.FC = () => {
 
   return (
     <div className="page-container">
-      {/* Our new, full-width header at the top */}
       <Header />
-
-      {/* Content Wrapper */}
       <div className="content-wrapper">
-        {/* Sidebar */}
         <aside className="sidebar">
           <ProductInfo
             title={product.title}
@@ -40,15 +36,12 @@ const ProductPage: React.FC = () => {
           />
         </aside>
 
-        {/* Main Panel */}
         <main className="main-panel">
-          {/* Chart Card */}
           <section className="card chart-card">
             <h2>Retail Sales</h2>
             <SalesChart sales={product.sales} />
           </section>
 
-          {/* Table Card */}
           <section className="card table-card">
             <SalesTable sales={product.sales} />
           </section>

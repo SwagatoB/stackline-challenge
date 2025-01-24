@@ -1,6 +1,4 @@
-/* SalesTable.css */
 
-/* Container for horizontal scroll if needed */
 .sales-table-container {
     width: 100%;
     overflow-x: auto;
@@ -31,7 +29,6 @@
     text-align: left;
   }
   
-  /* Optional hover effect */
   .sales-table tbody tr:hover td {
     background-color: #fafafa;
   }

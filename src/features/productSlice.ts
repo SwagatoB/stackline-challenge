@@ -1,4 +1,3 @@
-// src/features/productSlice.ts
 
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit'
 import type { RootState } from '../app/store'
@@ -43,9 +42,8 @@ const initialState: ProductState = {
   error: null,
 }
 
-// Simulate fetch from local JSON
 export const fetchProducts = createAsyncThunk('products/fetchProducts', async () => {
-  // If using local import
+
   const { default: productsData } = await import('../data/stackline_frontend_assessment_data_2021.json')
   return productsData as Product[]
 })
@@ -73,5 +71,4 @@ const productSlice = createSlice({
 
 export default productSlice.reducer
 
-// Selector
 export const selectProducts = (state: RootState) => state.product.products

@@ -1,4 +1,4 @@
-// src/components/ProductInfo.tsx
+
 import React from 'react'
 
 interface ProductInfoProps {

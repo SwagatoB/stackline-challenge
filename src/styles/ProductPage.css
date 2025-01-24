@@ -1,6 +1,4 @@
-/* src/styles/ProductPage.css */
 
-/* === BASIC RESET === */
 * {
     margin: 0;
     padding: 0;
@@ -12,22 +10,17 @@
     background: #f5f6f7;
   }
   
-  /* === PAGE CONTAINER === */
   .page-container {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
   }
-  
 
-  
-  /* === CONTENT WRAPPER === */
   .content-wrapper {
     display: flex;
     flex: 1;
   }
-  
-  /* === SIDEBAR === */
+
   .sidebar {
     width: 280px;
     background-color: #fff;
@@ -35,16 +28,17 @@
     border-right: 1px solid #e3e4e5;
   }
   
-  /* Example styling for product info, tags, etc. */
   .sidebar img {
     max-width: 100%;
     display: block;
   }
+
   .tags {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
   }
+
   .tag {
     background-color: #f1f2f3;
     padding: 0.25rem 0.5rem;
@@ -53,7 +47,6 @@
     color: #333;
   }
   
-  /* === MAIN PANEL === */
   .main-panel {
     flex: 1;
     padding: 1rem;
@@ -63,7 +56,6 @@
     overflow-y: auto;
   }
   
-  /* === CARD STYLE === */
   .card {
     background: #fff;
     border-radius: 4px;
@@ -71,17 +63,16 @@
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
   }
   
-  /* CHART CARD */
   .chart-card h2 {
     margin-bottom: 1rem;
     font-size: 1.2rem;
   }
   
-  /* TABLE CARD */
   .table-card table {
     width: 100%;
     border-collapse: collapse;
   }
+
   .table-card th {
     text-align: left;
     background: #f8f9fa;
@@ -89,6 +80,7 @@
     padding: 0.75rem;
     cursor: pointer;
   }
+  
   .table-card td {
     padding: 0.75rem;
     border-bottom: 1px solid #eee;
